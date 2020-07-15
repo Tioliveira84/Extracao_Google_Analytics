@@ -1,0 +1,81 @@
+﻿Referências:
+https://gren.com.br/blog/automatizar-google-analytics-com-python/
+https://developers.google.com/analytics/devguides/reporting/core/v4/quickstart/service-py
+https://developers.google.com/analytics/devguides/reporting/core/v4/rest/v4/reports/batchGet
+
+
+
+Preparar o Acompanhamento do Site pelo GA:
+https://analytics.google.com/
+Administrador >> Propriedade >> Informações de acompanhamento >> Código de acompanhamento
+Imputar o script na Página a ser acompanhada pelo GA.
+Exemplo:
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89235254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-89235254-1');
+</script>
+
+
+Criar um Projeto:
+https://console.developers.google.com
+Exemplo: Ole B2C PRD
+
+
+Criar Conta de Serviço:
+https://console.cloud.google.com/iam-admin/serviceaccounts
+Exemplo: integration@ole-b2c-prd.iam.gserviceaccount.com
+
+Papel: Projeto >> Visualizador
+
+
+Criar a Chave em Json para a Conta de Serviço
+https://console.cloud.google.com/iam-admin/serviceaccounts
+Ações >> Criar Charve >> JSON
+Exemplo: ole-b2c-prd-16d9f070d4bc.json
+
+Ativar a API:
+https://console.developers.google.com/apis/library/analyticsreporting.googleapis.com
+
+
+Permitir usuário acessar informações do GA:
+https://analytics.google.com/
+Administrador >> Gerenciamento de usuários da conta
+ou
+Administrador >> Gerenciamento de usuários da propriedade
+Permissões para: Ler e analisar
+Exemplo: integration@ole-b2c-prd.iam.gserviceaccount.com
+
+
+Recuperar a ID da Tabela
+https://ga-dev-tools.appspot.com/account-explorer/
+Exemplo: ga:136386382
+
+
+"C:\Program Files\Python\Python37\python.exe" -m pip install --upgrade pip
+"C:\Program Files\Python\Python37\Scripts\pip.exe" install google-api-python-client
+"C:\Program Files\Python\Python37\Scripts\pip.exe" install oauth2client
+
+
+
+Faça uma breve visita guiada pelo Google Analytics
+O seletor de contas permite-lhe navegar entre as contas, as propriedades e as visualizações do Google Analytics.
+
+Veja relatórios
+A área Relatórios contém todos os relatórios padrão do Google Analytics:
+Os relatórios de Público-alvo ajudam a saber mais acerca dos seus utilizadores
+Os relatórios de Aquisição apresentam a origem dos seus utilizadores
+Os relatórios de Comportamento resumem a atividade dos seus utilizadores quando acedem ao seu site
+Os relatórios de Conversão apresentam o desempenho do seu site relativamente aos objetivos ou à receita
+
+Personalização
+A personalização permite-lhe criar painéis de controlo, atalhos, relatórios personalizados e muito mais.
+
+Definições do Google Analytics
+O Administrador permite-lhe alterar as definições da conta, da propriedade e as visualizações.
+
+
